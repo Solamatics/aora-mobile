@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React, { useEffect } from "react";
 import { SplashScreen, Stack } from "expo-router";
 import { useFonts } from "expo-font";
+import GlobalProvider from '../context/GlobalProvider'
 
 SplashScreen.preventAutoHideAsync();
 
@@ -27,7 +28,8 @@ const RootLayout = () => {
   if (!fontsLoaded && !error) return null;
 
   return (
-    <Stack>
+    <GlobalProvider>
+      <Stack>
       <Stack.Screen
         name="index"
         options={{
@@ -53,6 +55,8 @@ const RootLayout = () => {
         }}
       /> */}
     </Stack>
+    </GlobalProvider>
+    
   );
 };
 

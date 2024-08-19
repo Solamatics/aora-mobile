@@ -27,7 +27,7 @@ const SignUp = () => {
     setIsSubmitting(true);
     try {
       const result = await createUser(email, password, username);
-      router.replace("/sign-in");
+      router.replace("/home");
     } catch (error) {
       Alert.alert("Error", error.message);
     } finally {
@@ -49,20 +49,20 @@ const SignUp = () => {
           </Text>
           <FormField
             title="Username"
-            value={form.username}
+            value={username}
             handleChangeText={(e) => setForm({ ...form, username: e })}
             otherStyles="mt-10"
           />
           <FormField
             title="Email"
-            value={form.email}
+            value={email}
             handleChangeText={(e) => setForm({ ...form, email: e })}
             otherStyles="mt-7"
             keyboardType="email-address"
           />
           <FormField
             title="Password"
-            value={form.password}
+            value={password}
             handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles="mt-7"
           />

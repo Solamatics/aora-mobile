@@ -5,7 +5,7 @@ import CustomButtom from "../../components/CustomButton";
 
 import { images } from "../../constants";
 import FormField from "../../components/FormField";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { signIn } from "../../lib/appwrite";
 
 const SignIn = () => {
@@ -46,14 +46,14 @@ const SignIn = () => {
           </Text>
           <FormField
             title="Email"
-            value={form.email}
+            value={email}
             handleChangeText={(e) => setForm({ ...form, email: e })}
             otherStyles="mt-7"
             keyboardType="email-address"
           />
           <FormField
             title="Password"
-            value={form.password}
+            value={password}
             handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles="mt-7"
           />
